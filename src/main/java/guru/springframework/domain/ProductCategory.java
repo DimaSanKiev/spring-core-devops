@@ -3,15 +3,12 @@ package guru.springframework.domain;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by jt on 1/26/16.
- */
 @Entity
 public class ProductCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id;
+    private Integer id;
 
     @Version
     private Integer version;
@@ -57,7 +54,7 @@ public class ProductCategory {
     @PrePersist
     public void updateTimeStamps() {
         lastUpdated = new Date();
-        if (dateCreated==null) {
+        if (dateCreated == null) {
             dateCreated = new Date();
         }
     }

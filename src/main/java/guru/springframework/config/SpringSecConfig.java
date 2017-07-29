@@ -7,9 +7,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-/**
- * Created by jt on 2/2/16.
- */
 @Configuration
 public class SpringSecConfig extends WebSecurityConfigurerAdapter {
 
@@ -18,14 +15,14 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
         auth
                 .inMemoryAuthentication()
                 .withUser("admin").password("admin").roles("ADMIN", "USER")
-                .and().withUser("user").password("user").roles( "USER");
+                .and().withUser("user").password("user").roles("USER");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/", "/index/**", "/product/**", "/checkout", "/docheckout").permitAll()
-                .and().authorizeRequests().antMatchers("/login","logout").permitAll()
-                .and().authorizeRequests().antMatchers("/static/css/**","/js/**", "/images/**", "/**/favicon.ico").permitAll()
+                .and().authorizeRequests().antMatchers("/login", "logout").permitAll()
+                .and().authorizeRequests().antMatchers("/static/css/**", "/js/**", "/images/**", "/**/favicon.ico").permitAll()
                 .and().formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll()
                 .and().logout()
                         .deleteCookies("remove")

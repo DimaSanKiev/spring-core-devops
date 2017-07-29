@@ -9,15 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
-/**
- * Created by jt on 2/1/16.
- */
-
 @Controller
 public class CheckoutController {
 
     @RequestMapping("/checkout")
-    public String checkoutForm(Model model){
+    public String checkoutForm(Model model) {
 
         model.addAttribute("checkoutCommand", new CheckoutCommand());
 
@@ -25,7 +21,7 @@ public class CheckoutController {
     }
 
     @RequestMapping(value = "/docheckout", method = RequestMethod.POST)
-    public String doCheckout(@Valid CheckoutCommand checkoutCommand, BindingResult bindingResult){
+    public String doCheckout(@Valid CheckoutCommand checkoutCommand, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "checkoutform";

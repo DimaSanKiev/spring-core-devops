@@ -3,9 +3,6 @@ package guru.springframework.domain;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by jt on 1/26/16.
- */
 @Entity
 public class Author {
     @Id
@@ -75,7 +72,7 @@ public class Author {
     @PrePersist
     public void updateTimeStamps() {
         lastUpdated = new Date();
-        if (dateCreated==null) {
+        if (dateCreated == null) {
             dateCreated = new Date();
         }
     }

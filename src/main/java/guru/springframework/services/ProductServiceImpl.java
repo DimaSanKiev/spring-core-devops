@@ -9,9 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by jt on 1/26/16.
- */
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -30,7 +27,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getProduct(Integer id) {
-        jmsTextMessageService.sendTextMessage("Fetching Product ID: " + id );
+        jmsTextMessageService.sendTextMessage("Fetching Product ID: " + id);
         return productRepository.findOne(id);
     }
 
