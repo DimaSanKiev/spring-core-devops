@@ -2,9 +2,6 @@ package guru.springframework.comands;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-/**
- * Created by jt on 2/2/16.
- */
 public class LoginCommand {
 
     @NotEmpty

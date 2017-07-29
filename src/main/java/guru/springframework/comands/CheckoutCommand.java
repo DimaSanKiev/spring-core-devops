@@ -4,9 +4,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
 
-/**
- * Created by jt on 2/1/16.
- */
 public class CheckoutCommand {
 
     @NotEmpty
