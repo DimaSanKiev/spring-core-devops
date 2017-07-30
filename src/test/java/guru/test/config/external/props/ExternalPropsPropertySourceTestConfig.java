@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
+/* from Spring 3.1. */
 @Configuration
 @PropertySource("classpath:testing.properties")
 public class ExternalPropsPropertySourceTestConfig {
